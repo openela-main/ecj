@@ -8,7 +8,7 @@ Epoch: 1
 Summary: Eclipse Compiler for Java
 Name:    ecj
 Version: %{eclipse_ver}
-Release: 16%{?dist}
+Release: 17%{?dist}
 URL:     https://www.eclipse.org
 License: EPL-2.0
 
@@ -27,7 +27,7 @@ BuildRequires: ant
 BuildRequires: javapackages-local
 BuildRequires: java-17-openjdk-devel
 
-Requires: (java-1.8.0-headless or java-11-headless or java-17-headless)
+Requires: (java-1.8.0-headless or java-11-headless or java-17-headless or java-21-headless)
 Requires: javapackages-tools
 
 %description
@@ -70,6 +70,9 @@ install -m 644 -p ecj.1 $RPM_BUILD_ROOT%{_mandir}/man1/ecj.1
 %{_mandir}/man1/ecj*
 
 %changelog
+* Thu Dec 07 2023 Hui Wang <huwang@redhat.com> - 1:4.20-17
+- Resolves: RHEL-18432 OpenJDK 21 support for RHEL ecj
+
 * Fri Oct 27 2023 Hui Wang <huwang@redhat.com> - 1:4.20-16
 - Resolves: RHEL-14880 ecj requires specific java version
 
